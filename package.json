@@ -1,0 +1,16 @@
+{
+  "name": "mieszkania-scraper",
+  "version": "1.0.0",
+  "description": "Scraper mieszkano=iony dla obliczenia srednich kwot kaucji itp itd",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "snoh666",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "nodemon": "^2.0.2",
+    "puppeteer": "^2.1.1"
+  }
+}
