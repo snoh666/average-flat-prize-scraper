@@ -94,10 +94,10 @@ const puppeteer = require('puppeteer');
 
   
 
-  // await fs.writeFile('result.json', JSON.stringify(resultObject), (err) => {
-  //   if (err) throw err;
-  //   console.log('The file has been saved!');
-  // });
+  await fs.writeFile('result.json', JSON.stringify(resultObject), (err) => {
+    if (err) throw err;
+    console.log('The file has been saved!');
+  });
 
 } )();
 
