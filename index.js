@@ -72,7 +72,6 @@ const puppeteer = require('puppeteer');
 
         const surety = [...descriptionListItems].filter(item => item);
 
-      
       return {
         title: title,
         prize: prize,
@@ -92,7 +91,6 @@ const puppeteer = require('puppeteer');
     await console.log(resultObject);
   }
 
-  
 
   await fs.writeFile('result.json', JSON.stringify(resultObject), (err) => {
     if (err) throw err;
