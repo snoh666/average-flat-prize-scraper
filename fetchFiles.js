@@ -1,24 +1,29 @@
 const fs = require('fs');
 
-const getClearSurety = string => {
-  console.log(Number(string));
-};
+const regex = /[-]{0,1}[\d]*[.]{0,1}[\d]+/g;
 
 fs.readFile('result.json', 'utf-8', (err, response) => {
   if (err) throw err;
 
   const data = JSON.parse(response);
 
-  console.log(data.surety.length + data.noSurety.length);
-
-  const getAverageSurety = (array) => {
-    const sum = 0;
+  const getAverage = (array) => {
+    let sum = 0;
     const { length } = array;
 
     array.forEach(item => {
-      console.log(getClearSurety(item.surety));
+      const intValue = Number(item.match(regex).join(''));
+      sum += intValue;
     });
+
+    return sum / length;
   };
 
-  getAverageSurety(data.surety);
+  let combined = [...data.surety].map(item => item.surety);
+  combined = [...combined, ...data.noSurety.map(item => item.prize)];
+
+  console.log('Avereage surety: ', getAverage([...data.surety].map(item => item.surety)));
+  console.log('Average prize of room with surety: ', getAverage([...data.surety].map(item => item.prize)));
+  console.log('Average prize wuthout surety: ', getAverage([...data.noSurety].map(item => item.prize)));
+  console.log('Combined avreage prize: ', getAverage(combined));
 });
