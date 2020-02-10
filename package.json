@@ -4,7 +4,8 @@
   "description": "Scraper mieszkano=iony dla obliczenia srednich kwot kaucji itp itd",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "fetch" : "node fetchFiles.js"
   },
   "author": "snoh666",
   "license": "ISC",
